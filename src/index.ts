@@ -2,11 +2,8 @@ import ExampleController from '@controllers/ExampleController';
 import express from 'express';
 
 const app = express();
+const exampleController = new ExampleController();
 
-app.get('/', (request, response) => {
-  const exampleController = new ExampleController();
-  exampleController.exampleAction();
-  return response.json({ message: 'Hello World!' });
-});
+app.get('/', exampleController.exampleAction);
 
 app.listen(3333);

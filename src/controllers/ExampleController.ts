@@ -1,8 +1,9 @@
-import ExampleService from '@services/ExampleService';
+import { Request, Response } from 'express';
 
 export default class ExampleController {
-  exampleAction() {
-    const exampleService = new ExampleService();
-    console.log(exampleService.getExampleValue());
+  exampleAction(request: Request, response: Response) {
+    response.json({
+      message: 'Nice setup!',
+    });
   }
 }
